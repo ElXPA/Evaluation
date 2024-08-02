@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 api_key = os.getenv('OPENAI_API_KEY')
+mlflow.autolog()
 
 dagshub.init(repo_owner='ElXPA', repo_name='Evaluation', mlflow=True)
 mlflow.set_tracking_uri("https://dagshub.com/ElXPA/Evaluation.mlflow")
