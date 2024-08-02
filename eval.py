@@ -19,9 +19,9 @@ eval_data = pd.DataFrame(
 mlflow.set_experiment("LLM Evaluation")
 with mlflow.start_run() as run:
     system_prompt = "Answer the following question in two sentences"
-    # Wrap "gpt-4" as an MLflow model.
+    # Wrap "gpt-35-turbo" as an MLflow model.
     logged_model_info = mlflow.openai.log_model(
-        model="gpt-4",
+        model="gpt-35-turbo",
         task=openai.chat.completions,
         artifact_path="model",
         messages=[
